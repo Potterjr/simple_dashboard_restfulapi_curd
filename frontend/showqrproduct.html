@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Request Example</title>
+</head>
+<body>
+    <div id="data"></div>
+
+    <script>
+        // Function to send API request and update HTML content
+        function fetchData() {
+            fetch('http://localhost/exdashboard/api/selectdata.html?id_product=1')  // Replace with your API endpoint
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.id_product);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        // Call the fetchData function when the page loads
+        fetchData();
+    </script>
+</body>
+</html>

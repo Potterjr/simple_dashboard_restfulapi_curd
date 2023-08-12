@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Left Sidebar -->
+    <navbar-component></navbar-component>
+    <!-- Main Content -->
+    <div class="content">
+
+        <h2>Main Content Area</h2>
+        <p>This is the main content area.</p>
+
+        <body>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-6 col-sm-3">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+                                <ion-icon name="people-outline"></ion-icon>
+                                รายการสมาชิก
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title member-card">จำนวน 5,000 คน</h5>
+                                <p class="card-text">
+                                    <a href="#" class="text-white" style="text-decoration: none;"> more detail...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3">
+                        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+                                <ion-icon name="cart-outline"></ion-icon>
+                                รายการออเดอร์
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title order-card"></h5>
+                                <p class="card-text">
+                                    <a href="#" class="text-white" style="text-decoration: none;"> more detail...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-6 col-sm-3">
+                        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+                                <ion-icon name="desktop-outline"></ion-icon>
+                                รายการสินค้า
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">จำนวน 9,999 รายการ</h5>
+                                <p class="card-text">
+                                    <a href="#" class="text-white" style="text-decoration: none;"> more detail...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3">
+                        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+                                <ion-icon name="cash-outline"></ion-icon>
+                                ยอดขาย
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> 11,500,000 บาท</h5>
+                                <p class="card-text">
+                                    <a href="#" class="text-white" style="text-decoration: none;"> more detail...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- //row -->
+        
+            </div>
+            <script src="../js/components/Headercomponent.js"></script>
+            <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" ></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const orderCountElement = document.querySelector(".order-card");
+            
+                    fetch("../api/countmember.php")
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data); 
+                            const orderCount = data[0]['COUNT(*)'];
+                            console.log(orderCount); 
+                            orderCountElement.textContent = `จำนวน ${orderCount} คน`;
+                        })
+                        .catch((error) => {
+                            console.error("Error fetching data:", error);
+                            orderCountElement.textContent = "Error loading data";
+                        });
+                });
+            </script>
+            
+            
+            
+        </body>
+
+</html>

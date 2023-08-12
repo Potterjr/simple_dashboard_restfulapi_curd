@@ -1,0 +1,117 @@
+/* Navbar Styles */
+nav#sidebarMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding-top: 1rem;
+  background-color: #f8f9fa;
+}
+
+nav#sidebarMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav#sidebarMenu .nav-item {
+  margin-bottom: 1rem;
+}
+
+nav#sidebarMenu .nav-link {
+  color: #333;
+  text-decoration: none;
+}
+
+nav#sidebarMenu .nav-link.active {
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+div.d-md-none {
+  display: none;
+}
+
+/* Mobile Toggle Button Styles */
+@media (max-width: 767.98px) {
+  div.d-md-none {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    z-index: 1000;
+  }
+
+  button.navbar-toggler {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+
+  button.navbar-toggler:focus {
+    outline: none;
+  }
+}
+
+.content {
+    margin-left: 230px;
+    padding: 2rem;
+}
+
+
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .modal-title {
+    font-weight: bold;
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+
+  .btn-register {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  .btn-register:hover {
+    background-color: #0056b3;
+  }
+
+  /* Adjust input text size and complexity */
+  input[type="number"],
+  select {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    width: 35%;
+    margin-bottom: 10px;
+  }
+
+
+
+  /* Style the checkbox label */
+  .form-check-label {
+    font-size: 14px;
+  }
